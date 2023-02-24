@@ -9,9 +9,8 @@ jobs:
         color: ["red", "pink"]
     env: 
       COLOR_ENV: ${{ matrix.color == 'pink' }}
-    if: ${{ env.COLOR_ENV == 'true' }}
     steps:
-      - if: ${{ env.COLOR_ENV == true }}
+      - if: ${{ env.COLOR_ENV == 'true' }}
         run: echo "color is ${{ matrix.color }} ${{ env.COLOR_ENV}}"
       - if: ${{ env.COLOR_ENV == 'true' }}
         run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
