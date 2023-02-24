@@ -9,6 +9,7 @@ jobs:
         color: ["red", "pink"]
     env: 
       COLOR_ENV: ${{ matrix.color == 'pink' }}
+    if: ${{ env.COLOR_ENV == 'true' }}
     steps:
       - if: ${{ env.COLOR_ENV == true }}
         run: echo "color is ${{ matrix.color }} ${{ env.COLOR_ENV}}"
