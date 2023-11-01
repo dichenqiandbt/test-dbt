@@ -1,6 +1,14 @@
 name: GitHub Actions Demo
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push, pull_request]
+
+on:
+  workflow_run:
+    workflows: [GitHub Actions Demo]
+    branches: 
+      - "**"
+    types: 
+      - completed 
+
 
 jobs:
   Explore-GitHub-Actions:
