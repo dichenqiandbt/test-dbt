@@ -17,7 +17,7 @@ jobs:
       COLOR_ENV: ${{ matrix.color == 'pink' }}
     steps:
       - if: ${{ env.COLOR_ENV == 'true' }}
-        run: echo "coslor iss ${{ matrix.color }} ${{ env.COLOR_ENV}}"
+        run: echo "coslor isss ${{ matrix.color }} ${{ env.COLOR_ENV}}"
       - if: ${{ env.COLOR_ENV == 'true' }}
         run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
       - run: echo "🐧 This job is now running on a ${{ runner.os }} server hosted by GitHub!"
