@@ -3,8 +3,8 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 
 on:
   workflow_run:
-    workflows: [github-actions-demo]
-    branches: 
+    workflows: [BaseDemo]
+    branches: # 
       - "**"
     types: 
       - completed 
