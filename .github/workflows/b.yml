@@ -1,0 +1,27 @@
+# name: notify-on-workflow-failure
+
+# on:
+#   workflow_run:
+#     workflows:
+#       - main-worker
+#       - main-httpapi
+#     types:
+#       - completed
+
+# jobs:
+#   notify-on-workflow-failure:
+#     name: Notify on workflow failure
+#     if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Send notification
+#         uses: dbt-labs/internal-actions/slack-notify@slack-notify-v1
+#         with:
+#           attempt: ${{ github.event.workflow_run.run_attempt }}
+#           author_only: False
+#           channel_id: dev-cloud-cli-builds
+#           commit_sha: ${{ github.event.workflow_run.head_sha  }}
+#           run_id: ${{ github.event.workflow_run.id  }}
+#           slack_token: ${{ secrets.SLACK_NOTIFY_OAUTH_TOKEN}}
+#           status: ${{ github.event.workflow_run.conclusion }}
+#           workflow: ${{ github.event.workflow_run.name  }}
